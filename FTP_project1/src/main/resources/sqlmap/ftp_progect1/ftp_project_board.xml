@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ftp_progect1">
+
+	<typeAlias alias="ftp_projectBoardVO"  type="com.ftp.projectboard.Ftp_projectBoardVO" />
+
+
+ 
+  <select id="ftp_projectBoardDAO.board_seq"  parameterClass="ftp_projectBoardVO"  resultClass="int">
+  	select count(board_seq) AS board_seq from test.ftp_board
+  </select>
+  
+  <select id="ftp_projectBoardDAO.board_list"  parameterClass="ftp_projectBoardVO"  resultClass="ftp_projectBoardVO">
+  	select * from test.ftp_board
+  	order by board_seq desc
+  </select>
+  
+  <insert id="ftp_projectBoardDAO.board_insert"  parameterClass="ftp_projectBoardVO">
+  	insert into ftp_board (board_title, board_reg_data, board_notice,
+							board_del_yn, board_content_text, board_writer_name,
+							board_mod_data, board_img_path
+							)values
+	(#board_title#, NOW(), #board_notice#, 'c', #board_content_text#, #board_writer_name#, NOW(), 'f')
+  </insert>
+  
+  <delete id="ftp_projectBoardDAO.board_delete"  parameterClass="ftp_projectBoardVO" >
+  	DELETE FROM ftp_board WHERE board_seq = #board_seq#
+  </delete>
+
+</sqlMap>
