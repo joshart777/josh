@@ -30,8 +30,8 @@ public class Ftp_projectBoardServiceImpl implements Ftp_projectBoardService{
 	}
 	
 	@Override
-	public int board_delete(Ftp_projectBoardVO vo, int i) throws Exception {
-		return dao.board_delete(vo);
+	public int board_delete(int i) throws Exception {
+		return dao.board_delete(i);
 	}
 	
 

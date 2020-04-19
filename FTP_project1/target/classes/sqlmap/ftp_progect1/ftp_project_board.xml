@@ -24,8 +24,8 @@
 	(#board_title#, NOW(), #board_notice#, 'c', #board_content_text#, #board_writer_name#, NOW(), 'f')
   </insert>
   
-  <delete id="ftp_projectBoardDAO.board_delete"  parameterClass="ftp_projectBoardVO" >
-  	DELETE FROM ftp_board WHERE board_seq in (#board_seq#)
+  <delete id="ftp_projectBoardDAO.board_delete"  parameterClass="int" >
+  	DELETE FROM ftp_board WHERE board_seq = #board_seq#
   </delete>
 
 </sqlMap>

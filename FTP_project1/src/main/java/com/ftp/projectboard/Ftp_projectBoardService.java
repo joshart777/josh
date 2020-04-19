@@ -17,7 +17,7 @@ public interface Ftp_projectBoardService {
 
 	String board_insert(Ftp_projectBoardVO vo) throws Exception;
 	
-	int board_delete(Ftp_projectBoardVO vo, int i) throws Exception;
+	int board_delete(int i) throws Exception;
 	
 		
 }

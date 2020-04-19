@@ -31,8 +31,8 @@ public class Ftp_projectBoardDAO {
 		return (String)sql.insert("ftp_projectBoardDAO.board_insert",vo);
 	}
 	
-	public Integer board_delete(Ftp_projectBoardVO vo) throws SQLException {					
-		return (Integer)sql.delete("ftp_projectBoardDAO.board_delete",vo);
+	public Integer board_delete(int i) throws SQLException {					
+		return (Integer)sql.delete("ftp_projectBoardDAO.board_delete", i);
 	}
 	
 }
