@@ -2,6 +2,7 @@ package com.ftp.projectboard;
 
 
 
+import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
@@ -53,9 +54,14 @@ public class Ftp_projectBoardController {
 	}
 	
 	@RequestMapping(value = "/board_delete.do")
-	public String board_delete(ModelMap model, Ftp_projectBoardVO vo) throws Exception{		
-		service.board_delete(vo);		
-							
+	public String board_delete(ModelMap model, Ftp_projectBoardVO vo) throws Exception{
+		String[] arrIdx = vo.getBoard_seq().toString().split(",");		
+		System.out.println("test = " + Arrays.toString(arrIdx));
+		
+		for (int i = 0; i < arrIdx.length; i++) {
+			service.board_delete(vo,(Integer.parseInt(arrIdx[i])));
+		}
+		
 		return "redirect:/board_list.do";
 	}
 	
