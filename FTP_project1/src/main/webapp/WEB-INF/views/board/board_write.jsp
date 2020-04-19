@@ -27,7 +27,7 @@
 	function board_insert(){
 		
 		alert("abc");
-		document.getElementById("menu").action = "/board/board_insert.do";
+		document.getElementById("menu").action = "/board_insert.do";
 	    document.getElementById("menu").submit();
 	    
 	}
@@ -44,7 +44,7 @@
 			<thead>
 				<tr>
 					<th scope="col">공지여부</th>
-					<th scope="col"><input id="board_notice" name="board_notice" placeholder="공지여부를 입력하세요" value="${Ftp_projectBoardVO.board_notice}"></th>
+					<th scope="col"><input id="board_notice" name="board_notice" placeholder="공지여부를 입력하세요" value="N" readonly></th>
 					<th scope="col">제목</th>
 					<th scope="col"><input id="board_title" name="board_title" placeholder="제목을 입력하세요" value="${Ftp_projectBoardVO.board_title}"></th>
 					<th scope="col">작성자</th>
@@ -55,7 +55,7 @@
 				<input id="board_content_text" style="width:100%; height:150px; letter-spacing: 1px" placeholder="내용을 입력하세요" value="${Ftp_projectBoardVO.board_content_text}">
 				<div style="float:right;" >
 					<input type="button" onclick="javascript:board_insert()" value="작성">
-					<input type="button" onclick="alert('hello')" value="취소">
+					<input type="button" onclick="location.href='/board_list.do'" value="목록">
 				</div>
 	</form>
 

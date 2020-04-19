@@ -24,11 +24,6 @@
 	});
 
 
-	function board_delete(){
-		document.getElementById("delete").action = "/board_delete.do";
-	    document.getElementById("delete").submit();
-	}
-	
 	function board_write(){
 		document.getElementById("write").action = "/board_write.do";
 	    document.getElementById("write").submit();
@@ -41,18 +36,7 @@
 	        $("input[name=checkRow]").prop("checked", false);
 	      }
 	}
-	
-	// 동작 안될수도 있음
-	$("#checkRow"﻿).click(function(){
-		console.log("hi");
-		if($("input[name='checkRow']").length == 3){
-			$("#checkAll").prop("checked", true);	
-		}else{
-			$("#checkAll").prop("checked", false);
-		}
-	})
-	
-	
+			
 	/* 삭제(체크박스된 것 전부) */
 function board_delete(){
   var checkRow = "";
@@ -65,11 +49,10 @@ function board_delete(){
     alert("삭제할 대상을 선택하세요.");
     return false;
   }
-  console.log("### checkRow => {}"+checkRow);
+  console.log("### checkRow => "+checkRow);
  
-  if(confirm("정보를 삭제 하시겠습니까?")){
-            
-      location.href="http://localhost:9022/board_list.do";      
+  if(confirm("정보를 삭제 하시겠습니까?")){	       
+      location.href="http://localhost:9022/board_delete.do?board_seq="+checkRow;      
   }
 }
 
@@ -86,7 +69,7 @@ function board_delete(){
 	<input type="text" value="검색하세요" ><input type="submit" value="검색">
 	</div>
 	
-	<div class="one">게시판 페이지</div>
+	<div class="one">용대의 게시판 페이지</div>
 	
 	<form id="ftpfrm" method="post">
 		<div>
@@ -124,7 +107,7 @@ function board_delete(){
 	<form id="write">		
 		<input id="write" type="button" onclick="javascript:board_write()"  value="글쓰기">
 	</form>
-	<form id="delete">	
+	<form id="delete">		
 		<input id="delete" type="button" onclick="javascript:board_delete()" value="삭제">
 	</form>
 	</div>

@@ -49,7 +49,7 @@ public class Ftp_projectBoardController {
 		
 		service.board_insert(vo);		
 		System.out.println(vo);		
-		return "redirect:/ftp_project1_board/ftp_project1_Board_list.do";		
+		return "redirect:/board_list.do";		
 	}
 	
 	@RequestMapping(value = "/board_delete.do")

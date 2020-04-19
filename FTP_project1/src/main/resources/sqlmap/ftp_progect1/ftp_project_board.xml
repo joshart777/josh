@@ -25,7 +25,7 @@
   </insert>
   
   <delete id="ftp_projectBoardDAO.board_delete"  parameterClass="ftp_projectBoardVO" >
-  	DELETE FROM ftp_board WHERE board_seq = #board_seq#
+  	DELETE FROM ftp_board WHERE board_seq in (#board_seq#)
   </delete>
 
 </sqlMap>
