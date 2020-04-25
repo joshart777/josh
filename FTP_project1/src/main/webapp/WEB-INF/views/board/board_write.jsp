@@ -24,12 +24,9 @@
 		
 	});
 	
-	function board_insert(){
-		
-		alert("abc");
+	function board_insert(){			
 		document.getElementById("menu").action = "/board_insert.do";
-	    document.getElementById("menu").submit();
-	    
+	    document.getElementById("menu").submit();	    
 	}
 </script>
 </head>
@@ -52,7 +49,7 @@
 				</tr>
 			</thead>
 			</table>
-				<input id="board_content_text" style="width:100%; height:150px; letter-spacing: 1px" placeholder="내용을 입력하세요" value="${Ftp_projectBoardVO.board_content_text}">
+				<input id="board_content_text" name="board_content_text" style="width:100%; height:150px; letter-spacing: 1px" placeholder="내용을 입력하세요" value="${Ftp_projectBoardVO.board_content_text}">
 				<div style="float:right;" >
 					<input type="button" onclick="javascript:board_insert()" value="작성">
 					<input type="button" onclick="location.href='/board_list.do'" value="목록">

@@ -25,13 +25,12 @@ public class Ftp_projectBoardController {
 	@RequestMapping(value = "/board_list.do")
 	public String ftpproject1_tab01(ModelMap model, Ftp_projectBoardVO vo) throws Exception {
 	
-		int board_seq =service.board_seq(vo);
-	
+		int board_seq = service.board_seq(vo);
 		List<Ftp_projectBoardVO> boardList = service.board_list(); 
-		
-		
+		 		
 		model.addAttribute("board_seq", board_seq );
-		model.addAttribute("boardList", boardList );
+		model.addAttribute("boardList", boardList );		
+		
 		return "views/board/board_list";
 		
 	}

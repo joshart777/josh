@@ -10,10 +10,10 @@
   <select id="ftp_projectBoardDAO.board_seq"  parameterClass="ftp_projectBoardVO"  resultClass="int">
   	select count(board_seq) AS board_seq from test.ftp_board
   </select>
-  
+    
   <select id="ftp_projectBoardDAO.board_list"  parameterClass="ftp_projectBoardVO"  resultClass="ftp_projectBoardVO">
-  	select * from test.ftp_board
-  	order by board_seq desc
+  	select board_seq, board_title, board_reg_data, board_notice, board_del_yn, board_content_text, board_writer_name, board_img_path, board_mod_data,  @rownum := @rownum+1 AS board_num
+	from ftp_board fb, (SELECT @rownum :=0) AS R
   </select>
   
   <insert id="ftp_projectBoardDAO.board_insert"  parameterClass="ftp_projectBoardVO">
@@ -21,7 +21,7 @@
 							board_del_yn, board_content_text, board_writer_name,
 							board_mod_data, board_img_path
 							)values
-	(#board_title#, NOW(), #board_notice#, 'c', #board_content_text#, #board_writer_name#, NOW(), 'f')
+	(#board_title#, NOW(), #board_notice#, 'N', #board_content_text#, #board_writer_name#, NOW(), NULL)
   </insert>
   
   <delete id="ftp_projectBoardDAO.board_delete"  parameterClass="int" >

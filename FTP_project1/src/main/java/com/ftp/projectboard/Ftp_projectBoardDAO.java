@@ -21,8 +21,7 @@ public class Ftp_projectBoardDAO {
 	public int board_seq(Ftp_projectBoardVO vo) throws SQLException {					
 		return (Integer)sql.queryForObject("ftp_projectBoardDAO.board_seq",vo);
 	}
-	
-	
+		
 	public List<Ftp_projectBoardVO> board_list() throws SQLException {				
 		return (List<Ftp_projectBoardVO>)sql.queryForList("ftp_projectBoardDAO.board_list");
 	}

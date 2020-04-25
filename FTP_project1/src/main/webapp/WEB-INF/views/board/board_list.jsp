@@ -76,8 +76,8 @@ function board_delete(){
 		
 		<table class="table table-dark">
 		<thead>
-			<tr>				
-				<th scope="col"><input type="checkbox" name="checkAll" id="checkAll" onclick="javascript:checkAll_()"></th>
+			<tr>							
+				<th scope="col"><input type="checkbox" name="checkAll" id="checkAll" onclick="javascript:checkAll_()"></th>				
 				<th scope="col">번호</th>
 				<th scope="col">제목</th>
 				<th scope="col">작성자</th>
@@ -86,10 +86,12 @@ function board_delete(){
 				<th scope="col">공지여부</th>
 			</tr>
 		</thead>
-			<c:forEach var="boardList" items="${boardList}" >
-				<tr>
+		
+		
+		<c:forEach var="boardList" items="${boardList}" >
+				<tr>					
 					<td><input type="checkbox" name="checkRow" id="checkRow" value="${boardList.board_seq}"></td>
-   		 			<td>${boardList.board_seq}</td>
+					<td>${boardList.board_num}</td>					   		 			
     				<td>${boardList.board_title}</td>
     				<td>${boardList.board_writer_name}</td>
     				<td>${boardList.board_content_text}</td>
