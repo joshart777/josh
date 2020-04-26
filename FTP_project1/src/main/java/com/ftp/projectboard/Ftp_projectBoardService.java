@@ -1,7 +1,7 @@
 package com.ftp.projectboard;
 
 import java.util.List;
-
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -12,12 +12,12 @@ import com.ftp.projectmain.Ftp_projectMainVO;
 public interface Ftp_projectBoardService {
 	
 	int board_seq(Ftp_projectBoardVO vo) throws Exception;
-	
-	List<Ftp_projectBoardVO> board_list() throws Exception;
+		
+	List<Map<String, Object>> board_list(Criteria cri) throws Exception;	
 
 	String board_insert(Ftp_projectBoardVO vo) throws Exception;
 	
-	int board_delete(int i) throws Exception;
+	int board_delete(int i) throws Exception;	
 	
 		
 }

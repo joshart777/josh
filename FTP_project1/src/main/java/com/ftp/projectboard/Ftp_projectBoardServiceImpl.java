@@ -1,6 +1,7 @@
 package com.ftp.projectboard;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -18,11 +19,10 @@ public class Ftp_projectBoardServiceImpl implements Ftp_projectBoardService{
 	public int board_seq(Ftp_projectBoardVO vo) throws Exception {
 		return dao.board_seq(vo);
 	}
-	
-	@Override
-	public List<Ftp_projectBoardVO> board_list() throws Exception {
-		return dao.board_list();
-	}
+		
+	public List<Map<String, Object>> board_list(Criteria cri) throws Exception {
+		    return dao.board_list(cri);
+	}		
 	
 	@Override
 	public String board_insert(Ftp_projectBoardVO vo) throws Exception {

@@ -1,6 +1,7 @@
 package com.ftp.projectboard;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import javax.activation.CommandMap;
 
@@ -21,10 +22,11 @@ public class Ftp_projectBoardDAO {
 	public int board_seq(Ftp_projectBoardVO vo) throws SQLException {					
 		return (Integer)sql.queryForObject("ftp_projectBoardDAO.board_seq",vo);
 	}
-		
-	public List<Ftp_projectBoardVO> board_list() throws SQLException {				
-		return (List<Ftp_projectBoardVO>)sql.queryForList("ftp_projectBoardDAO.board_list");
-	}
+			
+	@SuppressWarnings("unchecked")
+	public List<Map<String, Object>> board_list(Criteria cri) throws SQLException {
+	    return (List<Map<String,Object>>)sql.queryForList("ftp_projectBoardDAO.board_list", cri);
+	}	
 	
 	public String board_insert(Ftp_projectBoardVO vo) throws SQLException {					
 		return (String)sql.insert("ftp_projectBoardDAO.board_insert",vo);

@@ -4,32 +4,36 @@ package com.ftp.projectboard;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
- 
- 
-
 @Controller
 public class Ftp_projectBoardController {
-	
-	
-	
+		
 	@Resource(name = "ftp_projectBoardService")
 	private Ftp_projectBoardService service;
 	
 	//게시글 리스트
 	@RequestMapping(value = "/board_list.do")
-	public String ftpproject1_tab01(ModelMap model, Ftp_projectBoardVO vo) throws Exception {
+	public String ftpproject1_tab01(ModelMap model, Ftp_projectBoardVO vo, Criteria cri) throws Exception {
 	
-		int board_seq = service.board_seq(vo);
-		List<Ftp_projectBoardVO> boardList = service.board_list(); 
+		int board_seq = service.board_seq(vo);		
+		
+		List<Map<String,Object>> boardList = service.board_list(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+	    pageMaker.setCri(cri);
+	    pageMaker.setTotalCount(100);
+	
 		 		
 		model.addAttribute("board_seq", board_seq );
-		model.addAttribute("boardList", boardList );		
+		model.addAttribute("boardList", boardList );
+		model.addAttribute("pageMaker", pageMaker);		
 		
 		return "views/board/board_list";
 		

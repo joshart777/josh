@@ -3,7 +3,8 @@
 
 <sqlMap namespace="ftp_progect1">
 
-	<typeAlias alias="ftp_projectBoardVO"  type="com.ftp.projectboard.Ftp_projectBoardVO" />
+  <typeAlias alias="ftp_projectBoardVO"  type="com.ftp.projectboard.Ftp_projectBoardVO" />
+   <typeAlias alias="Criteria"  type="com.ftp.projectboard.Criteria" />
 
 
  
@@ -11,11 +12,17 @@
   	select count(board_seq) AS board_seq from test.ftp_board
   </select>
     
-  <select id="ftp_projectBoardDAO.board_list"  parameterClass="ftp_projectBoardVO"  resultClass="ftp_projectBoardVO">
+  <!-- 페이징 처리 후 게시글 조회 -->
+  <select id="ftp_projectBoardDAO.board_list"  parameterClass="Criteria"  resultClass="Criteria">
+  	<![CDATA[
   	select board_seq, board_title, board_reg_data, board_notice, board_del_yn, board_content_text, board_writer_name, board_img_path, board_mod_data,  @rownum := @rownum+1 AS board_num
 	from ftp_board fb, (SELECT @rownum :=0) AS R
+	order by board_num DESC
+	LIMIT #pageStart#, #perPageNum#
+	]]>
   </select>
   
+  <!-- 게시판 글쓰기 --> 
   <insert id="ftp_projectBoardDAO.board_insert"  parameterClass="ftp_projectBoardVO">
   	insert into ftp_board (board_title, board_reg_data, board_notice,
 							board_del_yn, board_content_text, board_writer_name,
@@ -24,8 +31,14 @@
 	(#board_title#, NOW(), #board_notice#, 'N', #board_content_text#, #board_writer_name#, NOW(), NULL)
   </insert>
   
+  <!-- 게시판 삭제 --> 
   <delete id="ftp_projectBoardDAO.board_delete"  parameterClass="int" >
   	DELETE FROM ftp_board WHERE board_seq = #board_seq#
   </delete>
+  
+  <!-- 총 게시글 갯수 출력 -->
+  <select id="countBoard" resultClass="int">
+	  SELECT COUNT(*) FROM BOARD
+  </select>
 
 </sqlMap>
