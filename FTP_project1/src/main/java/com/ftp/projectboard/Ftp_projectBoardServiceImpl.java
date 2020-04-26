@@ -1,5 +1,6 @@
 package com.ftp.projectboard;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -22,7 +23,12 @@ public class Ftp_projectBoardServiceImpl implements Ftp_projectBoardService{
 		
 	public List<Map<String, Object>> board_list(Criteria cri) throws Exception {
 		    return dao.board_list(cri);
-	}		
+	}
+	
+	@Override
+	public int board_count() throws SQLException {
+	    return dao.board_count();
+	}	
 	
 	@Override
 	public String board_insert(Ftp_projectBoardVO vo) throws Exception {

@@ -37,8 +37,8 @@
   </delete>
   
   <!-- 총 게시글 갯수 출력 -->
-  <select id="countBoard" resultClass="int">
-	  SELECT COUNT(*) FROM BOARD
+  <select id="ftp_projectBoardDAO.countBoard" resultClass="int">
+	  SELECT COUNT(*) FROM ftp_board
   </select>
 
 </sqlMap>

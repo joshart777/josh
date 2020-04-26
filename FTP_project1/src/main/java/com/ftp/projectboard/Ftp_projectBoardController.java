@@ -22,13 +22,14 @@ public class Ftp_projectBoardController {
 	@RequestMapping(value = "/board_list.do")
 	public String ftpproject1_tab01(ModelMap model, Ftp_projectBoardVO vo, Criteria cri) throws Exception {
 	
-		int board_seq = service.board_seq(vo);		
-		
+		int board_seq = service.board_seq(vo);
+						
 		List<Map<String,Object>> boardList = service.board_list(cri);
 		
 		PageMaker pageMaker = new PageMaker();
 	    pageMaker.setCri(cri);
 	    pageMaker.setTotalCount(100);
+	    pageMaker.setTotalCount(service.board_count());
 	
 		 		
 		model.addAttribute("board_seq", board_seq );

@@ -108,7 +108,12 @@ function board_delete(){
 	</form>
 	
 	
-	<ul class="btn-group pagination">
+
+
+	
+	<div style="float:right;" >
+	
+	<ul class="btn-group pagination" style="margin-right:30px;">
     <c:if test="${pageMaker.prev }">
     <li>
         <a href='<c:url value="/board_list.do?page=${pageMaker.startPage-1 }"/>'><i class="fa fa-chevron-left"></i></a>
@@ -125,15 +130,12 @@ function board_delete(){
     </li>
     </c:if>
 	</ul>
-
 	
-	<div style="float:right;" >
-	<form id="write">		
-		<input id="write" type="button" onclick="javascript:board_write()"  value="글쓰기">
-	</form>
-	<form id="delete">		
-		<input id="delete" type="button" onclick="javascript:board_delete()" value="삭제">
-	</form>
+	<form id="write">
+		<input id="delete"  style="float:right; margin-right:30px;" type="button" onclick="javascript:board_delete()" value="삭제">		
+		<input id="write"  style="float:right; margin-right:5px;" type="button" onclick="javascript:board_write()"  value="글쓰기">		
+	</form>	
+		
 	</div>
 
 </body>

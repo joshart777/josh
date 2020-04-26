@@ -26,7 +26,11 @@ public class Ftp_projectBoardDAO {
 	@SuppressWarnings("unchecked")
 	public List<Map<String, Object>> board_list(Criteria cri) throws SQLException {
 	    return (List<Map<String,Object>>)sql.queryForList("ftp_projectBoardDAO.board_list", cri);
-	}	
+	}
+	
+	 int board_count() throws SQLException{
+		    return (Integer)sql.queryForObject("ftp_projectBoardDAO.countBoard");
+	}		
 	
 	public String board_insert(Ftp_projectBoardVO vo) throws SQLException {					
 		return (String)sql.insert("ftp_projectBoardDAO.board_insert",vo);

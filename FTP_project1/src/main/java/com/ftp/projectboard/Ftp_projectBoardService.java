@@ -1,5 +1,6 @@
 package com.ftp.projectboard;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -13,7 +14,9 @@ public interface Ftp_projectBoardService {
 	
 	int board_seq(Ftp_projectBoardVO vo) throws Exception;
 		
-	List<Map<String, Object>> board_list(Criteria cri) throws Exception;	
+	List<Map<String, Object>> board_list(Criteria cri) throws Exception;
+	
+	int board_count() throws SQLException;
 
 	String board_insert(Ftp_projectBoardVO vo) throws Exception;
 	
