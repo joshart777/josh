@@ -16,7 +16,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
         <property name="driverClass" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
-		<property name ="url" value="jdbc:log4jdbc:mariadb://localhost:3306/test"/>
+		<property name ="url" value="jdbc:log4jdbc:mariadb://localhost:3306/ftp"/>
 		<property name ="username" value="root"/>
 		<property name ="password" value="1234"/>
 	</bean>
