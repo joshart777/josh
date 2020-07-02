@@ -9,7 +9,7 @@
 
  
   <select id="ftp_projectBoardDAO.board_seq"  parameterClass="ftp_projectBoardVO"  resultClass="int">
-  	select count(board_seq) AS board_seq from test.ftp_board
+  	select count(board_seq) AS board_seq from ftp.ftp_board
   </select>
     
   <!-- 페이징 처리 후 게시글 조회 -->
