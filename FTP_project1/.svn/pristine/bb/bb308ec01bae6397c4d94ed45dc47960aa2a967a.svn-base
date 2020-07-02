@@ -8,12 +8,12 @@
 
  
   <select id="ftp_projectMainDAO.test"  parameterClass="ftpprojectMainVO"  resultClass="int">
-  	select count(seq) AS seq from test.ftp_board
+  	select count(seq) AS seq from ftp.ftp_board
   </select>
 
 
  <select id="ftp_projectMainDAO.List_Ftpboard"  parameterClass="ftpprojectMainVO"  resultClass="ftpprojectMainVO">
-  	select seq,title AS seq from test.ftp_board
+  	select seq,title AS seq from ftp.ftp_board
   </select>
 
 </sqlMap>

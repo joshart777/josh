@@ -8,7 +8,7 @@
 
  
   <select id="ftp_projectUserDAO.test"  parameterClass="Ftp_projectUserVO"  resultClass="int">
-  	select count(board_seq) AS user_seq from test.ftp_board
+  	select count(board_seq) AS user_seq from ftp.ftp_board
   </select>
 
 
