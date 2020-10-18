@@ -2,43 +2,34 @@ package com.ftp.projectuser;
 
 public class Ftp_projectUserVO {
 	
-	private String user_seq;
-	private String user_name;
-	private String user_phone;
-	private String board_seq;
+	private String userId;
+	private String userPass;
+	private String userName;
+	private String userPhone;
 	
-	
-	
-	public String getUser_seq() {
-		return user_seq;
+	public String getUserId() {
+		return userId;
 	}
-	public void setUser_seq(String user_seq) {
-		this.user_seq = user_seq;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
-	
-	public String getUser_name() {
-		return user_name;
+	public String getUserPass() {
+		return userPass;
 	}
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+	public void setUserPass(String userPass) {
+		this.userPass = userPass;
 	}
-	
-	public String getUser_phone() {
-		return user_phone;
+	public String getUserName() {
+		return userName;
 	}
-	public void setUser_phone(String user_phone) {
-		this.user_phone = user_phone;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-	
-	public String getBoard_seq() {
-		return board_seq;
+	public String getUserPhone() {
+		return userPhone;
 	}
-	public void setBoard_seq(String board_seq) {
-		this.board_seq = board_seq;
+	public void setUserPhone(String userPhone) {
+		this.userPhone = userPhone;
 	}
-	
-	
-	
-	
-
+		    
 }

@@ -10,6 +10,28 @@
   <select id="ftp_projectUserDAO.test"  parameterClass="Ftp_projectUserVO"  resultClass="int">
   	select count(board_seq) AS user_seq from ftp.ftp_board
   </select>
+  
+  	<!-- 회원가입 -->
+	<insert id="register" parameterClass="Ftp_projectUserVO">
+	    INSERT INTO FTP_MEMBER(   USERID 
+	   					       , USERPASS 
+	   					       , USERNAME
+	   					       , PHONENUMBER
+	   					       , REGDATE 	)
+	                  VALUES(    #userId# 
+	                 		   , #userPass#
+	                 		   , #userName#
+	                 		   , #userPhone#
+	                 		   , now())
+    </insert>
+    
+    <!-- 로그인 -->
+	<select id="login" resultClass="Ftp_projectUserVO">
+		SELECT USERID, USERPASS 
+		  FROM FTP_MEMBER
+		 WHERE USERID = #userId#
+		   AND USERPASS = #userPass#   
+	</select>
 
 
 </sqlMap>

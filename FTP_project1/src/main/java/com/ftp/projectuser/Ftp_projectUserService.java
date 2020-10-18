@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 public interface Ftp_projectUserService {
 	
-	int test(Ftp_projectUserVO vo) throws Exception;
-
-
-
+	int test(Ftp_projectUserVO vo) throws Exception;	
+	
+	String register(Ftp_projectUserVO vo) throws Exception;
+	
+	Ftp_projectUserVO login(Ftp_projectUserVO vo) throws Exception;
+	
 }

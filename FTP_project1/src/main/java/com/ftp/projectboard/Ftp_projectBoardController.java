@@ -48,7 +48,7 @@ public class Ftp_projectBoardController {
 	}
 	
 	
-	//게시글 작성 처리
+	//게시글 작성
 	@RequestMapping(value = "/board_insert.do")
 	public String board_insert(ModelMap model, Ftp_projectBoardVO vo) throws Exception {
 		
@@ -57,6 +57,7 @@ public class Ftp_projectBoardController {
 		return "redirect:/board_list.do";		
 	}
 	
+	//게시글 삭제
 	@RequestMapping(value = "/board_delete.do")
 	public String board_delete(ModelMap model, Ftp_projectBoardVO vo) throws Exception{
 		String[] arrIdx =  vo.getBoard_seq().toString().split(",");		

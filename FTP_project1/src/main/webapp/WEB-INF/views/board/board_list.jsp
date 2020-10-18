@@ -15,11 +15,18 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
 	  rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" type="text/css" href="/resources/css/styles.css">	  
 
 <head>
 <link href="../resources/css/board/boardmain.css" rel="stylesheet"
 	type="text/css">
 <title>Start</title>
+<style type="text/css">
+/* 	body {
+	background-image: url("/resources/image/black_background.jpg");
+	}	 */
+	.masthead{padding-top:1rem; padding-bottom:0rem;}
+</style>
 <script type="text/javascript">
 
 	$(document).ready(function(){
@@ -59,23 +66,19 @@ function board_delete(){
   }
 }
 
-
-	
-	
-	
 	
 </script>
 </head>
 
 <body>
+       	            
+    <a class="navbar-brand js-scroll-trigger" style="color:black; font-size:17px;" href="http://localhost:8082">쇼핑몰 만들기</a>                    
 	<div style="float:right;" >
 	<input type="text" value="검색하세요" ><input type="submit" value="검색">
 	</div>
-	
-	<div class="one">용대의 게시판 페이지</div>
-	
+			
 	<form id="ftpfrm" method="post">
-		<div>
+		<div style="font-size:150%;">
 		
 		<table class="table table-dark">
 		<thead>
@@ -111,7 +114,7 @@ function board_delete(){
 
 
 	
-	<div style="float:right;" >
+	<div style="float:right;">
 	
 	<ul class="btn-group pagination" style="margin-right:30px;">
     <c:if test="${pageMaker.prev }">
@@ -137,6 +140,17 @@ function board_delete(){
 	</form>	
 		
 	</div>
+	
+	        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="/resources/assets/mail/jqBootstrapValidation.js"></script>
+        <script src="/resources/assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="/resources/js/scripts.js"></script> 
 
 </body>
 

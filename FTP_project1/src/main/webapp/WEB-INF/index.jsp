@@ -19,11 +19,31 @@
         <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->        
-        <link rel="stylesheet" type="text/css" href="/resources/css/styles.css"> 
-        <link href="<c:url value="/resources/css/styles.css"/>" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="/resources/css/styles.css">                
+<script type="text/javascript">
+	function board_list(){		
+		document.getElementById("ftpfrm").action = "/board_list.do";
+    	document.getElementById("ftpfrm").submit();
+	}
+
+	function user_list(){
+		document.getElementById("ftpfrm").action = "/user_list.do";
+    	document.getElementById("ftpfrm").submit();
+	}
+
+	function join(){		
+		document.getElementById("ftpfrm").action = "/join.do";
+    	document.getElementById("ftpfrm").submit();
+	}
+	
+	function login_home(){		
+		document.getElementById("ftpfrm").action = "/login_home.do";
+    	document.getElementById("ftpfrm").submit();
+	}
+</script>
     </head>
     <body id="page-top">
+    	<form id ="ftpfrm">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
@@ -35,10 +55,10 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">상품</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">공지사항</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" onclick="javascript:board_list()">공지사항</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">문의사항</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">로그인</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">회원가입</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" onclick="javascript:login_home()">로그인</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" onclick="javascript:join()" >회원가입</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">연락처</a></li>
                     </ul>
                 </div>
@@ -542,6 +562,7 @@
                 </div>
             </div>
         </div>
+        </form>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -551,6 +572,6 @@
         <script src="/resources/assets/mail/jqBootstrapValidation.js"></script>
         <script src="/resources/assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
-        <script src="/resources/js/scripts.js"></script>
+        <script src="/resources/js/scripts.js"></script>        
     </body>
 </html>

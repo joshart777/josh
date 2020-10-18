@@ -21,6 +21,13 @@ public class Ftp_projectUserDAO {
 		
 		return (Integer)sql.queryForObject("ftp_projectUserDAO.test",vo);
 	}
-
+	
+	public String register(Ftp_projectUserVO vo) throws SQLException {			
+		return (String)sql.insert("register",vo);
+	}
+	
+	public Ftp_projectUserVO login(Ftp_projectUserVO vo) throws Exception {		
+		return (Ftp_projectUserVO)sql.queryForObject("login", vo);
+	}
 
 }

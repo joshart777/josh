@@ -19,5 +19,14 @@ public class Ftp_projectUserServiceImpl implements Ftp_projectUserService{
 	public int test(Ftp_projectUserVO vo) throws Exception {
 		return dao.test(vo);
 	}
-
+	
+	@Override
+	public String register(Ftp_projectUserVO vo) throws Exception {
+		return dao.register(vo);
+	}
+	
+	@Override
+	public Ftp_projectUserVO login(Ftp_projectUserVO vo) throws Exception {
+	return dao.login(vo);
+	}
 }
