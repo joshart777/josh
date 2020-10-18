@@ -1,0 +1,8 @@
+
+body {
+    font-size: 10px;
+}
+
+.one {
+	font-size: 10px;
+}

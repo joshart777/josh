@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ace_progect">
+
+	<typeAlias alias="UserVO"  type="com.ace.projectuser.UserVO" />
+
+
+ 
+  <select id="UserDAO.test"  parameterClass="UserVO"  resultClass="int">
+  	select count(board_seq) AS user_seq from ace.board
+  </select>
+  
+  	<!-- 회원가입 -->
+	<insert id="register" parameterClass="UserVO">
+	    INSERT INTO MEMBER(   USERID 
+	   					       , USERPASS 
+	   					       , USERNAME
+	   					       , PHONENUMBER
+	   					       , REGDATE 	)
+	                  VALUES(    #userId# 
+	                 		   , #userPass#
+	                 		   , #userName#
+	                 		   , #userPhone#
+	                 		   , now())
+    </insert>
+    
+    <!-- 로그인 -->
+	<select id="login" resultClass="UserVO">
+		SELECT USERID, USERPASS 
+		  FROM MEMBER
+		 WHERE USERID = #userId#
+		   AND USERPASS = #userPass#   
+	</select>
+
+
+</sqlMap>
